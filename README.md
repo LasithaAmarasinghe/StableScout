@@ -42,6 +42,11 @@ npm install
 npm run dev
 ```
 
+## 🖼️ Interface
+<img width="1338" height="879" alt="image" src="https://github.com/user-attachments/assets/ee8980e3-1df2-4995-a4e9-6e0ee8b700c0" />
+<img width="1238" height="885" alt="image" src="https://github.com/user-attachments/assets/cf42bf0c-d4e6-4142-bf34-6eb6c90ff711" />
+<img width="1240" height="897" alt="image" src="https://github.com/user-attachments/assets/8f1491fa-590f-478b-8a9f-0dcd2f475de0" />
+
 ## 🎯 Why StableScout?
 
 - **Ensuring Safety:** Moving beyond basic data fetching to intelligent, verifiable risk management.
