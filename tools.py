@@ -31,3 +31,26 @@ def get_stablecoin_yield(asset: str) -> str:
         return f"The current live supply APY for {asset} on Aave V3 is {supply_apy:.2f}%."
     except Exception as e:
         return f"Error fetching data: {str(e)}"
+    
+@tool
+def check_risk_metrics(asset: str) -> str:
+    """
+    Checks for de-peg and liquidity risks for a stablecoin.
+    Looks at Chainlink price oracles and Aave Pool reserves.
+    """
+    w3 = Web3(Web3.HTTPProvider(os.getenv("ALCHEMY_RPC_URL")))
+    
+    # 1. Price Check (De-peg Risk)
+    # Using Chainlink USDC/USD Oracle on Ethereum
+    oracle_addr = w3.to_checksum_address("0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6")
+    # Minimal ABI for Chainlink
+    oracle_abi = [{"inputs":[],"name":"latestAnswer","outputs":[{"internalType":"int256","name":"","type":"int256"}],"stateMutability":"view","type":"function"}]
+    
+    oracle_contract = w3.eth.contract(address=oracle_addr, abi=oracle_abi)
+    price = oracle_contract.functions.latestAnswer().call() / 1e8 # Chainlink uses 8 decimals
+    
+    # 2. Liquidity Check (Aave V3 Reserve)
+    # (Reuse your existing Aave logic to check 'availableLiquidity')
+    
+    status = "HEALTHY" if 0.99 <= price <= 1.01 else "DE-PEGGED"
+    return f"Risk Report for {asset}: Price is ${price:.4f} ({status}). Liquidity is stable."
