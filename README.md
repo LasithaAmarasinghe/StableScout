@@ -6,7 +6,7 @@ StableScout is a high-performance, multi-agent AI system designed to bridge the 
 - **Agentic Yield Analysis:** An autonomous Analyst Agent that monitors supply APY on Aave V3 using live blockchain data.
 - **Autonomous Risk Guardrails:** A specialized Risk Agent that cross-references Chainlink Oracles to detect stablecoin de-pegging and liquidity crises.
 - **Multi-Agent Orchestration:** Powered by LangGraph, ensuring that no yield recommendation is ever provided without a mandatory security check.
-- **Real-Time Dashboard:** A premium, responsive interface built with Next.js and Tailwind CSS, designed with the "velocity x excellence" mindset of KAST.
+- **Real-Time Dashboard:** A premium, responsive interface built with Next.js and Tailwind CSS
 
 ## 🛠️ Tech Stack
 - **Frontend:** React, Next.js, Tailwind CSS (Design & UI/UX)
