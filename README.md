@@ -21,6 +21,9 @@ StableScout follows a modular Microservices Architecture, separating the "Brain"
 - **Cognitive Layer:** A directed acyclic graph (DAG) where the Analyst Node handoffs state to the Risk Node for mandatory validation before finalizing the output.
 - **API Layer:** A RESTful FastAPI layer providing authenticated endpoints for the frontend application.
 
+<img width="1000" height="564" alt="image" src="https://github.com/user-attachments/assets/de96e3c8-358a-4e24-9740-f5370523847f" />
+
+
 ## ⚙️ Installation & Setup
 ### Prerequisites
 - Python 3.10+
